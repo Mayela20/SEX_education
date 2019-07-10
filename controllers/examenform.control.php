@@ -124,7 +124,7 @@ function run()
         }
     }
     $viewData["mode"] = $mode;
-    $viewData["estadojuguete"] = addSelectedCmbArray($estadojuguetes, 'cod', $selectedEst);
+    $viewData["estadojuguetes"] = addSelectedCmbArray($estadojuguetes, 'cod', $selectedEst);
     $viewData["hasErrors"] = $hasError;
     $viewData["errores"] = $errores;
     renderizar("examenform", $viewData);

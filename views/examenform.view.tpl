@@ -1,6 +1,6 @@
 <h1>{{modeDsc}}</h1>
 <section class="row">
-<form action="index.php?page=moda" method="post" class="col-8 col-offset-2">
+<form action="index.php?page=examenform" method="post" class="col-8 col-offset-2">
   {{if hasErrors}}
     <section class="row">
       <ul class="error">
@@ -13,30 +13,26 @@
   <input type="hidden" name="mode" value="{{mode}}"/>
   <input type="hidden" name="xcfrt" value="{{xcfrt}}" />
   <input type="hidden" name="btnConfirmar" value="Confirmar" />
-  {{if showIdModa}}
+  {{if showidjuguetes}}
   <fieldset class="row">
-    <label class="col-5" for="idmoda">Código de Moda</label>
-    <input type="text" name="idmoda" id="idmoda" readonly value="{{idmoda}}" class="col-7" />
+    <label class="col-5" for="idjuguetes">Código de Juguetes</label>
+    <input type="text" name="idjuguetes" id="idjuguetes" readonly value="{{idjuguetes}}" class="col-7" />
   </fieldset>
-  {{endif showIdModa}}
+  {{endif showidjuguetes}}
   <fieldset class="row">
-    <label class="col-5" for="dscmoda">Descripción Corta</label>
-    <input type="text" name="dscmoda" id="dscmoda" {{readonly}} value="{{dscmoda}}" class="col-7" />
-  </fieldset>
-  <fieldset class="row">
-    <label class="col-5" for="prcmoda">Precio de Venta</label>
-    <input type="text" name="prcmoda" id="prcmoda" {{readonly}} value="{{prcmoda}}" class="col-7" />
+    <label class="col-5" for="nombrejuguetes">nombre</label>
+    <input type="text" name="nombrejuguetes" id="nombrejuguetes" {{readonly}} value="{{nombrejuguetes}}" class="col-7" />
   </fieldset>
   <fieldset class="row">
-    <label class="col-5" for="ivamoda">Impuesto sobre la Venta</label>
-    <input type="text" name="ivamoda" id="ivamoda" {{readonly}} value="{{ivamoda}}" class="col-7" />
+    <label class="col-5" for="precjuguete">Precio de Venta</label>
+    <input type="text" name="precjuguete" id="precjuguete" {{readonly}} value="{{precio}}" class="col-7" />
   </fieldset>
   <fieldset class="row">
-    <label class="col-5" for="estmoda">Estado</label>
-    <select name="estmoda" id="estmoda" class="col-7" {{selectDisable}} {{readonly}} >
-      {{foreach estadosModa}}
+    <label class="col-5" for="estadojuguete">Estado</label>
+    <select name="estadojuguete" id="estadojuguete" class="col-7" {{selectDisable}} {{readonly}} >
+      {{foreach estadojuguetes}}
         <option value="{{cod}}" {{selected}}>{{dsc}}</option>
-      {{endfor estadosModa}}
+      {{endfor estadojuguetes}}
     </select>
   </fieldset>
   <fieldset class="row">
@@ -62,7 +58,7 @@
     $("#btnCancelar").click(function(e){
       e.preventDefault();
       e.stopPropagation();
-      location.assign("index.php?page=modas");
+      location.assign("index.php?page=examenlist");
     });
     $("#btnConfirmar").click(function(e){
       e.preventDefault();
