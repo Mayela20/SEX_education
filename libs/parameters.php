@@ -14,7 +14,7 @@
  */
 $server = "127.0.0.1";
 $user = "examen";
-$pswd = "essenHypB4nk";
+$pswd = "mayela";
 $database = "examen";
 $port = "3306";
 
